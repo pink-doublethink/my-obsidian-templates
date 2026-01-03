@@ -1,0 +1,195 @@
+theme-light {
+    --primary-infobox-accent: var(--text-accent);
+    /* --section-background-color: rgb(123, 108, 217); based on Obsidian "interactive-accent-rgb" */
+}
+
+.theme-dark {
+    --primary-infobox-accent: var(--text-accent);
+    /* --section-background-color: rgb(72, 54, 153); based on Obsidian "interactive-accent-rgb" */
+    --infobox-line-color: #ddd;
+}
+
+/* === My Infobox custom Callout === */
+.callout[data-callout="infobox"] {
+    margin-left: 8px;
+    /* Better spacing from text. */
+    border-radius: 8px;
+    border: none;
+    /* shadows over borders */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* shadow for cards */
+    float: right;
+    width: 100%;
+    max-width: 18rem;
+    margin-top: 2px;
+    /* Bring it as close to H1 as possible. */
+    font-size: 1rem;
+}
+
+.callout[data-callout="infobox"][data-callout-metadata="left"] {
+    float: left;
+    margin-left: 0;
+    margin-right: 8px;
+}
+
+.callout[data-callout="infobox"][data-callout-metadata="center"] {
+    float: none;
+    display: block;
+    margin: auto;
+}
+
+/* Originally inspired by NFS wiki (#383838) */
+/* Now using Reasonable Color grey shade 5  */
+.theme-dark .callout[data-callout="infobox"] {
+    background-color: #3e3e3e;
+}
+
+/* === Title & Icons === */
+/* Remove any icons; even "invisbile" ones */
+/* (space freed up after setting this, even though */
+/* no visible icon was present). */
+.callout[data-callout="infobox"] .callout-title .callout-icon {
+    display: none;
+}
+
+/* Center title */
+.callout[data-callout="infobox"] .callout-title {
+    padding: 5px 10px;
+    background-color: transparent;
+    /* Less distracting title; no color */
+    text-align: center;
+    font-size: 110%;
+    font-style: italic;
+    border-radius: 8px 8px 0px 0px;
+    /* fall in line with overall shape, otherwise it overlaps */
+}
+
+/* Vertically align callout fold better. */
+.callout[data-callout="infobox"].is-collapsed .callout-fold {
+    padding-top: 2px;
+}
+
+/* === Content Meta === */
+
+/* Compact infobox content. */
+.callout[data-callout="infobox"] p,
+.callout[data-callout="infobox"] h3 {
+    margin: 0;
+    padding-left: 2px;
+    /* we don't want text touching border */
+}
+
+/* While content is left, center images. */
+.callout[data-callout="infobox"] .internal-embed,
+.callout[data-callout="infobox"] img {
+    text-align: center;
+    border-radius: 2px;
+    /* more subtle radius on images in infoboxes */
+    margin: 0 -1px;
+    /* negative margins trick to escape padding */
+}
+
+/* H2 headers act as our sections. */
+.callout[data-callout="infobox"] .callout-content h2 {
+    font-size: 1.1rem;
+    margin: 0;
+    padding: 0;
+    /* justify-content: center; Center as Flex */
+    text-align: center;
+    /* background: var(--primary-infobox-accent); */
+    /* border-radius: 2px; */
+    width: 100%;
+    color: var(--primary-infobox-accent);
+    border-top: 2px solid #ddd;
+}
+
+.theme-dark .callout[data-callout="infobox"] .callout-content h2 {
+    border-top: 2px solid #6f6f6f;
+    /* Reasonable color shade 4 */
+}
+
+
+/* === Simplified Infobox ===  */
+/* Compact size and color text. */
+.markdown-preview-view .callout[data-callout="infobox"] h3 {
+    font-size: 1rem;
+    /* margin: 0 2px; */
+    color: var(--primary-infobox-accent);
+}
+
+/* === Infobox using Tables; spacing & misc === */
+/* Tables! */
+.callout[data-callout="infobox"] table {
+    margin: 0;
+}
+
+/* Remove unused "title" table cell. */
+.callout[data-callout="infobox"] .callout-content>table th {
+    display: none;
+}
+
+/* Better compact content.*/
+.callout[data-callout="infobox"] .callout-content {
+    padding: 5px 2px;
+    /* If 0, it makes table inside scrollable - undesired behavior.*/
+}
+
+/* Keep text aligned and compact in cells. Remove table borders. */
+.callout[data-callout="infobox"] table :is(td, tr, th) {
+    vertical-align: text-top;
+    padding-left: 0%;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/* == Floats & Position === */
+/* Remove float and center infoboxes on small screens. */
+@media (max-width: 600px) {
+    .callout[data-callout="infobox"] {
+        float: none;
+        margin: auto;
+        min-width: 10rem;
+        /* Prevent infobox shrinking too much. */
+    }
+}
+
+/* Remove float and center infobox in hover previews too. */
+.popover .callout[data-callout="infobox"] {
+    float: none;
+    margin: auto;
+}
+
+/* Every other major visual element is now responsive to */
+/* this callout's presence! Including standard Callouts (:not)! */
+.markdown-preview-view :is(blockquote,
+    .callout:not(.callout[data-callout="infobox"])) {
+    display: flex;
+    flex-direction: column;
+    /* Aligns child elements correctly. */
+}
+
+/* continued: */
+/* Headers too (not included above because headers */
+/* do not like new flex direction. */
+.markdown-preview-view :is(h1, h2) {
+    display: flex;
+}
+
+/* Don't allow transclusions or lines next to infoboxes. */
+.markdown-embed:not(.image-embed),
+.markdown-preview-view hr {
+    clear: both;
+}
+
+/* === Themes === */
+/* Xenomorph theme */
+.callout[data-callout="infobox"][data-callout-metadata="xeno"] {
+    --primary-infobox-accent: green;
+}
+
+/* Enable borders */
+.callout[data-callout="infobox"][data-callout-metadata="border"],
+.callout[data-callout="infobox"][data-callout-metadata="borders"] {
+    border: 2px solid var(--primary-infobox-accent);
+    box-shadow: none;
+}

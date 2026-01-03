@@ -1,0 +1,10 @@
+{
+  "accentColor": "",
+  "cssTheme": "Obsidian Nord",
+  "theme": "obsidian",
+  "enabledCssSnippets": [
+    "custom-admonitions.8d4bbc",
+    "infobox-callout",
+    "ITS-callout"
+  ]
+}

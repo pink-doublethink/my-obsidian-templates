@@ -1,0 +1,6 @@
+{
+  "format": "DD-MMM-YYYY",
+  "folder": "0 ChangeLog",
+  "template": "0 Templates/ChangeLog",
+  "autorun": true
+}
