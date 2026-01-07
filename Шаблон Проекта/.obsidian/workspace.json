@@ -4,26 +4,6 @@
     "type": "split",
     "children": [
       {
-        "id": "1f0da1511f9d957b",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "9a3113378d579ce0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "0 Clean sheet.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "0 Clean sheet"
-            }
-          }
-        ]
-      },
-      {
         "id": "8b8671d37cc062d7",
         "type": "tabs",
         "children": [
@@ -31,14 +11,16 @@
             "id": "c173cd4d80193bc2",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "kanban",
               "state": {
-                "file": "0 Draft sheet.md",
-                "mode": "source",
-                "source": true
+                "file": "0 Project Tracker.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": []
+                }
               },
-              "icon": "lucide-file",
-              "title": "0 Draft sheet"
+              "icon": "lucide-trello",
+              "title": "0 Project Tracker"
             }
           }
         ]
@@ -207,16 +189,16 @@
       "obsidian-kanban:Create new board": false
     }
   },
-  "active": "ddda4b14bbc3a568",
+  "active": "c173cd4d80193bc2",
   "lastOpenFiles": [
+    "0 Clean sheet.md",
+    "0 Draft sheet.md",
+    "0 Project Tracker.md",
     "0 Prompts",
     "File",
     "0 Prompts/0 Prompt generator.md",
     "0 Prompts/0 Rewrite.md",
     "Locations/0 Locations.md",
-    "0 Clean sheet.md",
-    "0 Draft sheet.md",
-    "0 Project Tracker.md",
     "0 Warhammer 40k.md",
     "0 Task.md",
     "Templates/ChangeLog.md",
